@@ -2,5 +2,8 @@
   display: flex;
   justify-content:space-between ;
   align-items: center;
-  background-color: bisque;
+  background-color: rgb(229, 212, 192);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
 }
