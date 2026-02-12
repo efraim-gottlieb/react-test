@@ -1,6 +1,7 @@
 import { useState } from "react";
+import './searchBar.css'
 function SearchBar(props) {
-  const {data, setData, terrorists} = props
+  const {setData, terrorists} = props
 
   const [search, setSearch] = useState({name:'', attacks: ""});
     function handelChange(e) {
@@ -14,23 +15,21 @@ function SearchBar(props) {
   function byAttacks(){
     setData(terrorists.filter(ter => ter.attacksCount==search.attacks))
   }
-  function all(){
-    setData(terrorists)
-  }
   return (
-    <div>
+    <div className="search-bar">
+      <p>Search By:</p>
       <div>
-        <label htmlFor="by-name">search by name</label>
+        <label htmlFor="by-name">Name</label>
         <input name="name" onChange={handelChange} type="text" className="by-name" id="by-name" />
-        <button onClick={byName}>search</button>
+        <button onClick={byName}>Search</button>
       </div>
       <div>
 
-        <label htmlFor="by-attacks">search by attacks</label>
+        <label htmlFor="by-attacks">Attacks</label>
         <input name="attacks" onChange={handelChange} type="text" className="by-attacks" id="by-attacks" />
-        <button onClick={byAttacks}>search</button>
+        <button onClick={byAttacks}>Search</button>
       </div>
-      <button onClick={all}>All</button>
+
     </div>
   );
 }
