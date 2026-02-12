@@ -7,3 +7,9 @@
   border-radius: 1rem;
   padding: 1rem;
 }
+
+
+.control > div >div {
+  padding: 0.2rem;
+  height: 10rem;
+}
